@@ -10,6 +10,9 @@
 
   <script>
     function sendRequest() {
+      // 先顯示執行中
+      document.getElementById("result").innerText = "執行中...";
+
       // 這裡填你的 Apps Script Web App 網址
       var url = "https://script.google.com/macros/s/AKfycbzwxKNv5dZHU5knEYKtZ3zfBjNrBSe6M5oXzuH9ugnHDQanyRcIGhaWCWqiCt0uhYwl-A/exec";
       fetch(url)
