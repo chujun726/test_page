@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>發送 GAS Request</title>
+</head>
+<body>
+  <button onclick="sendRequest()">點我發送請求</button>
+  <div id="result"></div>
+
+  <script>
+    function sendRequest() {
+      // 這裡填你的 Apps Script Web App 網址
+      var url = "https://script.google.com/macros/s/AKfycbzwxKNv5dZHU5knEYKtZ3zfBjNrBSe6M5oXzuH9ugnHDQanyRcIGhaWCWqiCt0uhYwl-A/exec";
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("result").innerText = data;
+        })
+        .catch(error => {
+          document.getElementById("result").innerText = "發生錯誤：" + error;
+        });
+    }
+  </script>
+</body>
+</html>
